@@ -41,6 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ui.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\nback.data\nback.data.csproj">
+      <Project>{4702e2b1-2eaf-4b6a-aeb9-280d96f281c3}</Project>
+      <Name>nback.data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

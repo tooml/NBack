@@ -1,4 +1,5 @@
-﻿using System;
+﻿using nback.ui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,10 @@ namespace nback.app
     {
         static void Main(string[] args)
         {
+            Ui ui = new Ui();
+
+            Prüfstand prüfstand = new Prüfstand();
+            prüfstand.Ui_testen(ui);
         }
     }
 }

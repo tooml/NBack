@@ -45,9 +45,24 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prüfstand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\nback.data\nback.data.csproj">
+      <Project>{4702e2b1-2eaf-4b6a-aeb9-280d96f281c3}</Project>
+      <Name>nback.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\nback.logik\nback.logik.csproj">
+      <Project>{9e90e651-a95b-4731-b0fa-1c60a8db5ade}</Project>
+      <Name>nback.logik</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\nback.ui\nback.ui.csproj">
+      <Project>{822cd72c-018c-43fd-9797-3be25ed3c478}</Project>
+      <Name>nback.ui</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
