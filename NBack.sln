@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nback.data", "nback.data\nb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nback.logik", "nback.logik\nback.logik.csproj", "{9E90E651-A95B-4731-B0FA-1C60A8DB5ADE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nback.tests", "nback.tests\nback.tests.csproj", "{E3401AFF-3444-4F6F-9D4D-3FAE26201626}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9E90E651-A95B-4731-B0FA-1C60A8DB5ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E90E651-A95B-4731-B0FA-1C60A8DB5ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E90E651-A95B-4731-B0FA-1C60A8DB5ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3401AFF-3444-4F6F-9D4D-3FAE26201626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3401AFF-3444-4F6F-9D4D-3FAE26201626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3401AFF-3444-4F6F-9D4D-3FAE26201626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3401AFF-3444-4F6F-9D4D-3FAE26201626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -43,6 +43,7 @@
     <Compile Include="data\Cfg.cs" />
     <Compile Include="data\Ergebnis.cs" />
     <Compile Include="data\Reiz.cs" />
+    <Compile Include="data\Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

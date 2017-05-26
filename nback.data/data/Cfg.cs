@@ -8,9 +8,17 @@ namespace nback.data.data
 {
     public class Cfg
     {
-        public string Name { get; set; }
-        public int N { get; set; }
-        public int Reizdauer { get; set; }
-        public int Anzahl_Reize { get; set; }
+        public string Name { get; private set; }
+        public int N { get; private set; }
+        public int Reizdauer { get; private set; }
+        public int Anzahl_Reize { get; private set; }
+
+        public Cfg(string name, int n, int reizdauer, int anzahl_reize)
+        {
+            Name = name;
+            N = n;
+            Reizdauer = reizdauer;
+            Anzahl_Reize = anzahl_reize;
+        }
     }
 }

@@ -8,6 +8,11 @@ namespace nback.data.data
 {
     public class Ergebnis
     {
-        public int Prozent { get; set; }
+        public int Prozent { get; private set; }
+
+        public Ergebnis(int prozent)
+        {
+            Prozent = prozent;
+        }
     }
 }

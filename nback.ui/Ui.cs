@@ -9,8 +9,11 @@ namespace nback.ui
 {
     public class Ui
     {
+        private Cfg _cfg;
+
         public void Cfg_anzeigen(Cfg cfg)
         {
+            _cfg = cfg;
             Console.WriteLine($"Name des Probanden: {cfg.Name}");
             Console.WriteLine($"n: {cfg.N}");
             Console.WriteLine($"Reizdauer: {cfg.Reizdauer}");
@@ -25,7 +28,7 @@ namespace nback.ui
             Console.WriteLine("'w' für Widerholung, 'Space' für keine Wiederholung");
             Console.WriteLine();
             Console.ReadKey();
-            Reiz_Test_starten();
+            Reiz_Test_starten(new Start(_cfg.Anzahl_Reize, _cfg.N));
         }
 
         public void Reiz_anzeigen(Reiz reiz)
@@ -46,7 +49,7 @@ namespace nback.ui
             Console.ReadKey();
         }
 
-        public event Action Reiz_Test_starten;
+        public event Action<Start> Reiz_Test_starten;
         public event Action<Antwort> Antwort_gegben;
     }
 }
