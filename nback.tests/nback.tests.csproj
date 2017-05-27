@@ -51,7 +51,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReizEqualityComparer.cs" />
     <Compile Include="ReizTestStartenTests.cs" />
+    <Compile Include="ZufallsgeneratorMock.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nback.data\nback.data.csproj">
@@ -61,6 +63,10 @@
     <ProjectReference Include="..\nback.logik\nback.logik.csproj">
       <Project>{9e90e651-a95b-4731-b0fa-1c60a8db5ade}</Project>
       <Name>nback.logik</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\nback.provider\nback.provider.csproj">
+      <Project>{f5928477-fbb6-4348-8d5d-b46fe4353c56}</Project>
+      <Name>nback.provider</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

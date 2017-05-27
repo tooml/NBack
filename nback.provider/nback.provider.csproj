@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9E90E651-A95B-4731-B0FA-1C60A8DB5ADE}</ProjectGuid>
+    <ProjectGuid>{F5928477-FBB6-4348-8D5D-B46FE4353C56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nback.logik</RootNamespace>
-    <AssemblyName>nback.logik</AssemblyName>
+    <RootNamespace>nback.provider</RootNamespace>
+    <AssemblyName>nback.provider</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,17 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reizfolge.cs" />
-    <Compile Include="Reizgenerator.cs" />
+    <Compile Include="Zufallsgenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nback.data\nback.data.csproj">
       <Project>{4702e2b1-2eaf-4b6a-aeb9-280d96f281c3}</Project>
       <Name>nback.data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\nback.provider\nback.provider.csproj">
-      <Project>{f5928477-fbb6-4348-8d5d-b46fe4353c56}</Project>
-      <Name>nback.provider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
