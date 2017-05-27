@@ -30,17 +30,17 @@ namespace nback.logik
             return reizfolge;
         }
 
-        public int Anzahl_wiederholungen_berechnen(int anzahl, int n)
+        private int Anzahl_wiederholungen_berechnen(int anzahl, int n)
         {
             return (anzahl / n / 2);
         }
 
-        public int Letzte_mögliche_Wiederholung(int anzahl, int n)
+        private int Letzte_mögliche_Wiederholung(int anzahl, int n)
         {
             return (anzahl - n);
-        }        
+        }
 
-        public IEnumerable<char> Wiederholungen_einfügen(IEnumerable<char> buchstaben, IEnumerable<int> buchstaben_index, int n)
+        private IEnumerable<char> Wiederholungen_einfügen(IEnumerable<char> buchstaben, IEnumerable<int> buchstaben_index, int n)
         {
             var buchstaben_arr = buchstaben.ToArray();
 
@@ -54,7 +54,7 @@ namespace nback.logik
             return buchstaben_arr;
         }
 
-        public Queue<Reiz> Reizfole_erstellen(IEnumerable<char> buchstaben)
+        private Queue<Reiz> Reizfole_erstellen(IEnumerable<char> buchstaben)
         {
             var reiz_anzahl = buchstaben.Count();
             var reizfolge = buchstaben.Select((buchstabe, index) =>
