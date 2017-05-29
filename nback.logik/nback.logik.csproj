@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Antworten.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reizfolge.cs" />
     <Compile Include="Reizgenerator.cs" />
+    <Compile Include="UseCaseHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nback.data\nback.data.csproj">

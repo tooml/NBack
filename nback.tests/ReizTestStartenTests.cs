@@ -14,6 +14,7 @@ namespace nback.tests
     [TestClass]
     public class ReizTestStartenTests
     {
+        private UseCaseHandler _usecasehandler;
         private Reizgenerator _reiz_generator;
         private Reizfolge _reizfolge;
         private IZufallsgenerator _zufall;
@@ -24,7 +25,8 @@ namespace nback.tests
         {
             _zufall = new Zufallsgenerator();
             _zufall_mock = new ZufallsgeneratorMock();
-            _reiz_generator = new Reizgenerator(_zufall_mock);        
+            _reiz_generator = new Reizgenerator(_zufall_mock);
+            _usecasehandler = new UseCaseHandler(_reiz_generator, _reizfolge, new Antworten());     
         }
 
         [TestMethod]
@@ -39,8 +41,8 @@ namespace nback.tests
 
 
             _reizfolge = new Reizfolge(sut_reizfolge);
-
-            var sut_nächster_reiz = _reizfolge.Nächsten_Reiz_bestimmen();
+            Reiz sut_nächster_reiz = null;
+            _reizfolge.Nächsten_Reiz_bestimmen(reiz => sut_nächster_reiz = reiz, () => { });
             var expected_reiz = new Reiz('A', 5, 1);
 
             Assert.AreEqual(expected_reiz.Buchstabe, sut_nächster_reiz.Buchstabe);
@@ -55,6 +57,7 @@ namespace nback.tests
             _zufall = null;
             if (_reizfolge != null)
                 _reizfolge = null;
+            _usecasehandler = null;
         }
     }
 }

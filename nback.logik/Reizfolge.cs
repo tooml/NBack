@@ -16,9 +16,12 @@ namespace nback.logik
             _reizfolge = reizfolge;
         }
 
-        public Reiz Nächsten_Reiz_bestimmen()
+        public void Nächsten_Reiz_bestimmen(Action<Reiz> nächster_Reiz, Action Reizfolge_leer)
         {
-            return (_reizfolge.Any()) ? _reizfolge.Dequeue() : null;
+            if (_reizfolge.Any())
+                nächster_Reiz(_reizfolge.Dequeue());
+            else
+                Reizfolge_leer();
         }
     }
 }
