@@ -16,18 +16,15 @@ namespace nback.tests
         [TestMethod]
         public void Protokollieren_Ergebnis_berechnen()
         {
-            var test_reizfolge = new Reiz[] { new Reiz('A', 5, 1), new Reiz('B', 5, 2),
-                                          new Reiz('A', 5, 3), new Reiz('D', 5, 4), new Reiz('E', 5, 5) };
-            var reizfolge = new Reizfolge(new Queue<Reiz>(test_reizfolge));
-
             var antworten = new Antworten();
-            var usecasehandler = new UseCaseHandler(null, reizfolge, antworten, new Analyst());
+            var usecasehandler = new UseCaseHandler(new Reizgenerator(new ZufallsgeneratorMock()), antworten, new Analyst());
 
             Ergebnis sut = null;
             usecasehandler.Ergebnis_berechnet += erg => sut = erg;
 
             usecasehandler.Nächster_Reiz += reiz => { };
-            reizfolge.Nächsten_Reiz_bestimmen(_ => { }, () => { });
+            usecasehandler.Reiz_Test_starten(5, 2);
+
             usecasehandler.Protokollieren(Antwort.Keine_Wiederholung, 2);
             usecasehandler.Protokollieren(Antwort.Keine_Wiederholung, 2);
             usecasehandler.Protokollieren(Antwort.Wiederholung, 2);
@@ -42,17 +39,16 @@ namespace nback.tests
         [TestMethod]
         public void Protokollieren_nächster_Reiz_vorhanden()
         {
-            var test_reizfolge = new Reiz[] { new Reiz('A', 5, 1), new Reiz('B', 5, 2),
-                                          new Reiz('A', 5, 3), new Reiz('D', 5, 4), new Reiz('E', 5, 5) };
-
-            var reizfolge = new Reizfolge(new Queue<Reiz>(test_reizfolge));
             var antworten = new Antworten();
-            var usecasehandler = new UseCaseHandler(new Reizgenerator(new ZufallsgeneratorMock()), reizfolge, antworten, null);
-
+            var usecasehandler = new UseCaseHandler(new Reizgenerator(new ZufallsgeneratorMock()), antworten, null);
+            
             Reiz sut = null;
+
             usecasehandler.Nächster_Reiz += reiz => sut = reiz;
-            usecasehandler.Protokollieren(Antwort.Wiederholung, 2);        
-            var reiz_expected = new Reiz('A', 5, 1);
+            usecasehandler.Reiz_Test_starten(5, 2);
+            usecasehandler.Protokollieren(Antwort.Wiederholung, 2);
+        
+            var reiz_expected = new Reiz('B', 5, 2);
 
             Assert.AreEqual(reiz_expected.Buchstabe, sut.Buchstabe);
             Assert.AreEqual(reiz_expected.Index, sut.Index);

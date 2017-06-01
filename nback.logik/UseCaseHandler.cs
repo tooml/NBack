@@ -14,9 +14,8 @@ namespace nback.logik
         private Antworten _antworten;
         private Analyst _analyst; 
 
-        public UseCaseHandler(Reizgenerator reizgenerator, Reizfolge reizfolge, Antworten antworten, Analyst analyst)
+        public UseCaseHandler(Reizgenerator reizgenerator,  Antworten antworten, Analyst analyst)
         {
-            _reizfolge = reizfolge;
             _antworten = antworten;
             _reizgenerator = reizgenerator;
             _analyst = analyst;

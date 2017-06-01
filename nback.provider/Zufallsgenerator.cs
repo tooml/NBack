@@ -26,7 +26,7 @@ namespace nback.provider
 
         public IEnumerable<int> Indizes_für_Wiederholungen_erstellen(int min, int max, int anz)
         {
-            return Enumerable.Range(1, anz)
+            return Enumerable.Range(0, anz)
                 .Select(_ => _rnd.Next(min, max));
         }
     }

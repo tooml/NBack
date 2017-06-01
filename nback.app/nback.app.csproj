@@ -59,6 +59,10 @@
       <Project>{9e90e651-a95b-4731-b0fa-1c60a8db5ade}</Project>
       <Name>nback.logik</Name>
     </ProjectReference>
+    <ProjectReference Include="..\nback.provider\nback.provider.csproj">
+      <Project>{f5928477-fbb6-4348-8d5d-b46fe4353c56}</Project>
+      <Name>nback.provider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\nback.ui\nback.ui.csproj">
       <Project>{822cd72c-018c-43fd-9797-3be25ed3c478}</Project>
       <Name>nback.ui</Name>

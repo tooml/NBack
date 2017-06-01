@@ -32,7 +32,7 @@ namespace nback.logik
 
         private int Anzahl_wiederholungen_berechnen(int anzahl, int n)
         {
-            return (anzahl / n / 2);
+            return ((anzahl / n) / 2);
         }
 
         private int Letzte_mögliche_Wiederholung(int anzahl, int n)
