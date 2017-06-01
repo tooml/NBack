@@ -12,29 +12,31 @@ namespace nback.logik
         private Reizgenerator _reizgenerator;
         private Reizfolge _reizfolge;
         private Antworten _antworten;
-        private int _n;    
+        private Analyst _analyst; 
 
-        public UseCaseHandler(Reizgenerator reizgenerator, Reizfolge reizfolge, Antworten antworten)
+        public UseCaseHandler(Reizgenerator reizgenerator, Reizfolge reizfolge, Antworten antworten, Analyst analyst)
         {
             _reizfolge = reizfolge;
             _antworten = antworten;
             _reizgenerator = reizgenerator;
+            _analyst = analyst;
         }
 
         public void Reiz_Test_starten(int anzahl, int n)
         {
-            _n = n;
             var reizfolge = _reizgenerator.Reizfolge_berechnen(anzahl, n);
             _reizfolge = new Reizfolge(reizfolge);
             _reizfolge.Nächsten_Reiz_bestimmen(reiz => Nächster_Reiz(reiz), () => { });
         }
 
-        public void Protokollieren(Antwort antwort)
+        public void Protokollieren(Antwort antwort, int n)
         {
             _antworten.Antwort_registrieren(antwort);
             _reizfolge.Nächsten_Reiz_bestimmen(reiz => Nächster_Reiz(reiz),
-                                               () => { }
-                                              );
+                                               () => {
+                                                       var ergebnis = _analyst.Ergebnis_berechnen(_reizfolge, _antworten, n);
+                                                       Ergebnis_berechnet(ergebnis);
+                                                     });
         }
 
         public event Action<Reiz> Nächster_Reiz;

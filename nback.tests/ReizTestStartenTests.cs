@@ -26,7 +26,7 @@ namespace nback.tests
             _zufall = new Zufallsgenerator();
             _zufall_mock = new ZufallsgeneratorMock();
             _reiz_generator = new Reizgenerator(_zufall_mock);
-            _usecasehandler = new UseCaseHandler(_reiz_generator, _reizfolge, new Antworten());     
+            _usecasehandler = new UseCaseHandler(_reiz_generator, _reizfolge, new Antworten(), null);     
         }
 
         [TestMethod]
