@@ -30,6 +30,20 @@ namespace nback.tests
         }
 
         [TestMethod]
+        public void Reiz_Test_starten_UseCaseHandler()
+        {
+            Reiz sut = null;
+            _usecasehandler.Nächster_Reiz += reiz => sut = reiz;
+            _usecasehandler.Reiz_Test_starten(5, 2);
+
+            var reiz_expected = new Reiz('A', 5, 1);
+
+            Assert.AreEqual(reiz_expected.Buchstabe, sut.Buchstabe);
+            Assert.AreEqual(reiz_expected.Index, sut.Index);
+            Assert.AreEqual(reiz_expected.Anzahl, sut.Anzahl);
+        }
+
+        [TestMethod]
         public void Reiz_Test_starten()
         {
             var sut_reizfolge = _reiz_generator.Reizfolge_berechnen(5, 2);
