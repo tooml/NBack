@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="contracts\IStoppuhr.cs" />
     <Compile Include="data\Cfg.cs" />
     <Compile Include="data\Ergebnis.cs" />
     <Compile Include="data\Reiz.cs" />

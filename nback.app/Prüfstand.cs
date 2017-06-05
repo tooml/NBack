@@ -1,4 +1,6 @@
-﻿using nback.data.data;
+﻿using nback.data.contracts;
+using nback.data.data;
+using nback.provider;
 using nback.ui;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace nback.app
         public void Ui_testen(Ui ui)
         {
             Cfg cfg = new Cfg("Hans", 10, 3, 2000 );
+            IStoppuhr stoppuhr = new Stoppuhr(1000, 3);
             
             ui.Reiz_Test_starten += _ => {
                 ui.Reiz_anzeigen(new Reiz('A', 1, 10 ));
@@ -32,7 +35,7 @@ namespace nback.app
                     ui.Ergebnis_anzeigen(new Ergebnis(wiederholung));
             };
 
-            ui.Cfg_anzeigen(cfg);
+            ui.Cfg_anzeigen(cfg, stoppuhr);
         }
     }
 }

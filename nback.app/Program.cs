@@ -26,7 +26,7 @@ namespace nback.app
             //ui.Antwort_gegben += ant => usecasehandler.Protokollieren(ant, 2);
             //usecasehandler.Ergebnis_berechnet += ui.Ergebnis_anzeigen;
 
-            //ui.Cfg_anzeigen(new data.data.Cfg("peter", 2, 30, 5));
+            //ui.Cfg_anzeigen(new data.data.Cfg("peter", 2, 30, 5), new Stoppuhr(3000, 2));
 
             Prüfstand prüfstand = new Prüfstand();
             prüfstand.Ui_testen(ui);

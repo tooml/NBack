@@ -54,6 +54,7 @@
     <Compile Include="ProtokollierenTests.cs" />
     <Compile Include="ReizEqualityComparer.cs" />
     <Compile Include="ReizTestStartenTests.cs" />
+    <Compile Include="StoppuhrTests.cs" />
     <Compile Include="ZufallsgeneratorMock.cs" />
   </ItemGroup>
   <ItemGroup>
