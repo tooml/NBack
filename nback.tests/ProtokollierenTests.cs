@@ -17,7 +17,8 @@ namespace nback.tests
         public void Protokollieren_Ergebnis_berechnen()
         {
             var antworten = new Antworten();
-            var usecasehandler = new UseCaseHandler(new Reizgenerator(new ZufallsgeneratorMock()), antworten, new Analyst());
+            var usecasehandler = new UseCaseHandler(new Reizgenerator(new ZufallsgeneratorMock()), 
+                                                                            antworten, new Analyst());
 
             Ergebnis sut = null;
             usecasehandler.Ergebnis_berechnet += erg => sut = erg;

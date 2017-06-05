@@ -17,6 +17,7 @@ namespace nback.ui
         {
             _cfg = cfg;
             _stoppuhr = stoppuhr;
+
             Console.WriteLine($"Name des Probanden: {cfg.Name}");
             Console.WriteLine($"n: {cfg.N}");
             Console.WriteLine($"Reizdauer: {cfg.Reizdauer}");
@@ -36,39 +37,35 @@ namespace nback.ui
 
         public void Reiz_anzeigen(Reiz reiz)
         {
-            _stoppuhr.Intervall_abgelaufen += () => { };
-            _stoppuhr.Stoppuhr_abgelaufen += () =>
-            {
-                _stoppuhr.Stoppuhr_stoppen();
-                Antwort_gegben(Antwort.Keine_Wiederholung);
-            };
-
-            Zeige_Reiz(reiz);
+            Console.CursorLeft = 0;
+            Console.Write($"Reiz {reiz.Index} / {reiz.Anzahl} : {reiz.Buchstabe} ....................");
             _stoppuhr.Stoppuhr_starten();
             Auf_Antwort_warten();
-            
         }
 
-        public void Zeige_Reiz(Reiz reiz)
-        {
-            Console.CursorLeft = 0;
-            Console.Write($"Reiz {reiz.Index} / {reiz.Anzahl} : {reiz.Buchstabe} ...............");
-        }
-
-        public void Auf_Antwort_warten()
+        private void Auf_Antwort_warten()
         {
             var antwort = Console.ReadKey(true);
+
+            _stoppuhr.Stoppuhr_stoppen();
+
             if (antwort.Key.Equals(ConsoleKey.W))
-            {
-                _stoppuhr.Stoppuhr_stoppen();
                 Antwort_gegben(Antwort.Wiederholung);
-            }
             else
-            {
-                _stoppuhr.Stoppuhr_stoppen();
-                Antwort_gegben(Antwort.Keine_Wiederholung);
-            }
-                
+                Antwort_gegben(Antwort.Keine_Wiederholung);  
+        }
+
+        public void Intervall_abgelaufen()
+        {
+            Console.Write("\b");
+            Console.Write(" ");
+            Console.Write("\b");
+        }
+
+        public void Reizdauer_abgelaufen()
+        {
+            _stoppuhr.Stoppuhr_stoppen();
+            Antwort_gegben(Antwort.Keine_Wiederholung);
         }
 
         public void Ergebnis_anzeigen(Ergebnis erg)
