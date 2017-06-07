@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F0A27C2-BD70-45F7-B7FA-22387ABF7944}</ProjectGuid>
+    <ProjectGuid>{647DAC16-904D-41E6-8A23-658775298CAE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nback.app</RootNamespace>
-    <AssemblyName>nback.app</AssemblyName>
+    <RootNamespace>nback.ui.tests</RootNamespace>
+    <AssemblyName>nback.ui.tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,13 +22,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,18 +45,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="Prüfstand.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nback.data\nback.data.csproj">
       <Project>{4702e2b1-2eaf-4b6a-aeb9-280d96f281c3}</Project>
       <Name>nback.data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\nback.logik\nback.logik.csproj">
-      <Project>{9e90e651-a95b-4731-b0fa-1c60a8db5ade}</Project>
-      <Name>nback.logik</Name>
     </ProjectReference>
     <ProjectReference Include="..\nback.provider\nback.provider.csproj">
       <Project>{f5928477-fbb6-4348-8d5d-b46fe4353c56}</Project>

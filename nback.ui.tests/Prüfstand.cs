@@ -1,20 +1,19 @@
-﻿using nback.data.contracts;
-using nback.data.data;
-using nback.provider;
-using nback.ui;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using nback.data.data;
+using nback.data.contracts;
+using nback.provider;
 
-namespace nback.app
+namespace nback.ui.tests
 {
     public class Prüfstand
     {
         public void Ui_testen(Ui ui)
         {
-            Cfg cfg = new Cfg("Hans", 10, 3, 2000 );
+            Cfg cfg = new Cfg("Hans", 10, 3, 2000);
             IStoppuhr stoppuhr = new Stoppuhr(2000, 20);
             var reize_list = new Reiz[] { new Reiz('A', 1, 10), new Reiz('B', 2, 10),
                                       new Reiz('C', 3, 10)};
@@ -45,6 +44,6 @@ namespace nback.app
             };
 
             ui.Cfg_anzeigen(cfg, stoppuhr);
-        }       
+        }
     }
 }
