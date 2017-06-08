@@ -8,7 +8,6 @@ namespace nback.data.contracts
 {
     public interface IZufallsgenerator
     {
-        IEnumerable<char> Buchstabenliste_erstellen(int anz);
-        IEnumerable<int> Indizes_für_Wiederholungen_erstellen(int min, int max, int anz);
+        IEnumerable<int> Zufallszahlen_generieren(int min, int max, int anz);
     }
 }

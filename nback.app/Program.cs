@@ -15,7 +15,7 @@ namespace nback.app
         static void Main(string[] args)
         {
             Ui ui = new Ui();
-            Cfg cfg = new Cfg("peter", 1, 3000, 10);
+            Cfg cfg = new Cfg("peter", 2, 3000, 10);
             Stoppuhr stoppuhr = new Stoppuhr(cfg.Reizdauer, 20);
 
             var analyst = new Analyst();

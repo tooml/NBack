@@ -9,14 +9,17 @@ namespace nback.tests
 {
     public class ZufallsgeneratorMock : IZufallsgenerator
     {
-        public IEnumerable<char> Buchstabenliste_erstellen(int anz)
+        private int _zeiger = -1;
+        private int[][] _zufallszahlen_mock = new int[][] 
         {
-            return new char[] { 'A', 'B', 'C', 'D', 'E' };
-        }
+            new int[] { 0, 1, 2, 3, 4 },
+            new int[] { 0 }
+        };
 
-        public IEnumerable<int> Indizes_für_Wiederholungen_erstellen(int min, int max, int anz)
+        public IEnumerable<int> Zufallszahlen_generieren(int min, int max, int anz)
         {
-            return new int[] { 0 };
+            _zeiger++;
+            return _zufallszahlen_mock[_zeiger];
         }
     }
 }

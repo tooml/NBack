@@ -11,6 +11,7 @@ namespace nback.logik
 {
     public class Reizgenerator
     {
+        private char[] _buchstaben = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         private readonly IZufallsgenerator _zufall;
 
         public Reizgenerator(IZufallsgenerator zufall)
@@ -20,14 +21,29 @@ namespace nback.logik
 
         public Queue<Reiz> Reizfolge_berechnen(int anzahl, int n)
         {
-            var buchstaben = _zufall.Buchstabenliste_erstellen(anzahl);
+            var buchstaben = Buchstabenliste_erstellen(anzahl);
+            var nback_buchstabenlsite = NBack_Buchstabenliste_erstellen(buchstaben, anzahl, n);
+            return Reizfole_erstellen(nback_buchstabenlsite);
+        }
+
+        private IEnumerable<char> Buchstabenliste_erstellen(int anzahl)
+        {
+            var buchstaben_indizes = _zufall.Zufallszahlen_generieren(0, _buchstaben.Count() - 1, anzahl);
+            var buchstaben = Indizes_in_Buchstaben_wandeln(buchstaben_indizes);
+            return buchstaben;
+        }
+
+        private IEnumerable<char> NBack_Buchstabenliste_erstellen(IEnumerable<char> buchstaben, int anzahl, int n)
+        {
             var anz_wdh = Anzahl_wiederholungen_berechnen(anzahl, n);
             var letzte_mögliche_wdh = Letzte_mögliche_Wiederholung(anzahl, n);
-            var austausch_index = _zufall.Indizes_für_Wiederholungen_erstellen(0, letzte_mögliche_wdh, anzahl);
-            var buchstaben_mit_wdh = Wiederholungen_einfügen(buchstaben, austausch_index, n);
-            var reizfolge = Reizfole_erstellen(buchstaben_mit_wdh);
+            var austausch_index = _zufall.Zufallszahlen_generieren(0, letzte_mögliche_wdh, anzahl);
+            return Wiederholungen_einfügen(buchstaben, austausch_index, n);
+        }
 
-            return reizfolge;
+        private IEnumerable<char> Indizes_in_Buchstaben_wandeln(IEnumerable<int> indizes)
+        {
+            return indizes.Select(index => _buchstaben.ElementAt(index));
         }
 
         private int Anzahl_wiederholungen_berechnen(int anzahl, int n)

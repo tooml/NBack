@@ -17,13 +17,11 @@ namespace nback.tests
         private UseCaseHandler _usecasehandler;
         private Reizgenerator _reiz_generator;
         private Reizfolge _reizfolge;
-        private IZufallsgenerator _zufall;
         private IZufallsgenerator _zufall_mock;
 
         [TestInitialize]
         public void Init()
         {
-            _zufall = new Zufallsgenerator();
             _zufall_mock = new ZufallsgeneratorMock();
             _reiz_generator = new Reizgenerator(_zufall_mock);
             _usecasehandler = new UseCaseHandler(_reiz_generator, new Antworten(), null);     
@@ -68,7 +66,7 @@ namespace nback.tests
         public void Clean_up()
         {
             _reiz_generator = null;
-            _zufall = null;
+            _zufall_mock = null;
             if (_reizfolge != null)
                 _reizfolge = null;
             _usecasehandler = null;
