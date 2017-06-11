@@ -1,11 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using nback.data.data;
 using nback.logik;
-using System;
+using nback.tests.comparer;
+using nback.tests.mock;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace nback.tests
 {

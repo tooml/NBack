@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace nback.tests
+namespace nback.tests.mock
 {
     public class ZufallsgeneratorMock : IZufallsgenerator
     {
